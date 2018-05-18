@@ -1,2 +1,37 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<h1><%= @cocktail.name %></h1>
+<div class="row padded">
+    <div class="col-md-4 text-center padded-mini">
+    </div>
+    <div class="col-md-8">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="3">Ingredients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cocktail.doses.each do |dose| %>
+              <tr>
+                <td><%= dose.ingredient.name %></td>
+                <td><%= dose.description %></td>
+                <td><%= link_to "Delete ingredient", dose_path(dose), method: :delete %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+<div class="row padded">
+  <div class="col-xs-12 col-sm-4 text-center padded-mini">
+    <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), Class: 'btn btn-success' %>
+  </div>
+  <div class="col-xs-12 col-sm-4 text-center padded-mini">
+    <%= link_to "Back to Cocktails", cocktails_path, Class: 'btn btn-primary' %>
+  </div>
+  <div class="col-xs-12 col-sm-4 text-center padded-mini">
+    <%= link_to "Delete Cocktail", cocktail_path(@cocktail), Class: 'btn btn-danger', method: :delete %>
+  </div>
+</div>
+

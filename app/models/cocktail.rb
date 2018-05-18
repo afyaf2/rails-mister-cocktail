@@ -4,5 +4,9 @@ class Cocktail < ApplicationRecord
 
 # validate name uniqueness and presence
   validates :name, uniqueness: true, presence: true
+
+# add photo uploader
+  mount_uploader :photo, PhotoUploader
+
 end
 
