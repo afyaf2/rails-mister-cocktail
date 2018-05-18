@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+div#index-cocktail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+div.index-cocktail-item {
+    width: 200px;
+    margin-bottom: 20px;
+}

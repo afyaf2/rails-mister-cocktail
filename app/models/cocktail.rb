@@ -7,6 +7,5 @@ class Cocktail < ApplicationRecord
 
 # add photo uploader
   mount_uploader :photo, PhotoUploader
-
 end
 
